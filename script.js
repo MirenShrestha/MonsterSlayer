@@ -3,7 +3,7 @@ new Vue({
     data: {
         playerHealth: 100,
         monsterHealth: 100,
-        gameIsRunning: false,
+        gameIsRunning: false,   
         turns: []
     },
     methods: {
@@ -39,16 +39,21 @@ new Vue({
             this.monsterAttacks();
         },
         heal: function () {
+            // if (this.playerHealth <= 90) {
+            //     this.playerHealth += 10;
+            // } else {
+            //     this.playerHealth = 100;
+            // }
+            // this.turns.unshift({
+            //     isPlayer: true,
+            //     text: 'Player heals for 10'
+            // });
+            // this.monsterAttacks();
             if (this.playerHealth <= 90) {
-                this.playerHealth += 10;
-            } else {
-                this.playerHealth = 100;
+            this.playerHealth += 10;
             }
-            this.turns.unshift({
-                isPlayer: true,
-                text: 'Player heals for 10'
-            });
-            this.monsterAttacks();
+            else 
+            this.playerHealth = 100;
         },
         giveUp: function () {
             if (confirm('Give Up?')) {
